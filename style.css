@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Tiny5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Righteous&family=Tiny5&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+    font-size: 55px;
+    color: #bba007;
+    text-shadow: 
+        1px 1px 0 #f8f9f8, 
+        -1px -1px 0 #d36505, 
+        1px -1px 0 #b0b523,
+        -1px 1px 0 #8a0303;
+}
+
+body {
+    background-color: black;
+    text-align: center;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+    position: relative;
+    transition: opacity 0.5s ease-out;
+}
+
+.box {
+    height: 18vh;
+    width: 18vh;
+    border-radius: 1rem;
+    border: 2px solid yellow;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 8vmin;
+    color: red;
+    background: transparent;
+}
+
+#reset-btn, #newgame-btn {
+    padding: 1rem;
+    font-size: 2rem;
+    color: red;
+    background-color: black;
+    border-radius: 1rem;
+}
+
+#newgame-btn {
+    font-size: 1rem;
+    color: rgb(238, 176, 7);
+    margin-top: 25px;
+}
+
+#msg {
+    color: transparent;
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    margin-top: 15px;
+    font-family: 'Righteous', cursive;
+    background: radial-gradient(#020024, #e0c003, #eb0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.msg-container {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+}
+
+.msg-container.show {
+    opacity: 1;
+}
+
+.hide {
+    display: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 45px;
+    }
+    .box {
+        height: 16vh;
+        width: 16vh;
+        font-size: 7vmin;
+    }
+    #msg {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .box {
+        height: 14vh;
+        width: 14vh;
+        font-size: 6vmin;
+    }
+    #msg {
+        font-size: 4rem;
+    }
+    #reset-btn, #newgame-btn {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .game {
+        height: 80vmin;
+        width: 80vmin;
+    }
+    .box {
+        height: 12vh;
+        width: 12vh;
+        font-size: 5vmin;
+    }
+    #msg {
+        font-size: 3rem;
+    }
+    #reset-btn, #newgame-btn {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .game {
+        height: 90vmin;
+        width: 90vmin;
+    }
+    .box {
+        height: 10vh;
+        width: 10vh;
+        font-size: 4vmin;
+    }
+    #msg {
+        font-size: 2.5rem;
+    }
+    #reset-btn, #newgame-btn {
+        font-size: 1rem;
+    }
+}
