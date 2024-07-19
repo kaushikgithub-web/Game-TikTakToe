@@ -4,8 +4,12 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
+body{
+    background-image: url('./sounds/back.jpg');
+    background-size: cover;
+}
 h1 {
     color: white;
     font-family: 'Luckiest Guy', cursive;
@@ -22,6 +26,7 @@ h1 {
 body {
     background-color: black;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .container {
@@ -29,29 +34,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    flex-direction: column;
 }
 
 .game {
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 1.5vmin;
-    position: relative;
-    transition: opacity 0.5s ease-out;
+    height: auto;
+    width: auto;
 }
 
 .box {
-    height: 18vh;
-    width: 18vh;
-    border-radius: 1rem;
-    border: 2px solid yellow;
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 2rem;
+    border: 3px solid yellow;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-    font-size: 8vmin;
+    font-size: 60px !important;
     color: red;
     background: transparent;
 }
@@ -68,6 +68,7 @@ body {
     font-size: 1rem;
     color: rgb(238, 176, 7);
     margin-top: 25px;
+
 }
 
 #msg {
@@ -117,14 +118,13 @@ body {
     display: none;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 1200px) {
     h1 {
         font-size: 45px;
     }
     .box {
-        height: 16vh;
-        width: 16vh;
+        height: 16vmin;
+        width: 16vmin;
         font-size: 7vmin;
     }
     #msg {
@@ -134,8 +134,8 @@ body {
 
 @media (max-width: 992px) {
     .box {
-        height: 14vh;
-        width: 14vh;
+        height: 14vmin;
+        width: 14vmin;
         font-size: 6vmin;
     }
     #msg {
@@ -147,13 +147,9 @@ body {
 }
 
 @media (max-width: 768px) {
-    .game {
-        height: 80vmin;
-        width: 80vmin;
-    }
     .box {
-        height: 12vh;
-        width: 12vh;
+        height: 12vmin;
+        width: 12vmin;
         font-size: 5vmin;
     }
     #msg {
@@ -165,13 +161,9 @@ body {
 }
 
 @media (max-width: 576px) {
-    .game {
-        height: 90vmin;
-        width: 90vmin;
-    }
     .box {
-        height: 10vh;
-        width: 10vh;
+        height: 10vmin;
+        width: 10vmin;
         font-size: 4vmin;
     }
     #msg {
@@ -179,5 +171,24 @@ body {
     }
     #reset-btn, #newgame-btn {
         font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 35px;
+    }
+    .box {
+        height: 8vmin;
+        width: 8vmin;
+        font-size: 3vmin;
+    }
+    #msg {
+        font-size: 2rem;
+    }
+    #reset-btn, #newgame-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem;
     }
 }
